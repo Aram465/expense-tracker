@@ -1,0 +1,128 @@
+ <div class="chatbot">
+
+  <!-- Header -->
+  <div class="chat-header">
+
+    <div>
+      <h2>Expense Tracker AI Assistant</h2>
+
+      <p>
+        Ask me anything about your expenses
+      </p>
+    </div>
+
+  </div>
+
+
+  <!-- Messages -->
+  <div class="messages">
+
+    <!-- Welcome Message -->
+    @if (messages().length === 0) {
+
+      <div class="welcome">
+
+        <i class="pi pi-comments"></i>
+
+        <h3>Hello! 👋</h3>
+
+        <p>
+          Ask me about your expenses,
+          totals, categories, or spending.
+        </p>
+
+      </div>
+
+    }
+
+
+    <!-- Chat Messages -->
+    @for (msg of messages(); track $index) {
+
+      <div
+        class="message"
+        [class.user-message]="msg.sender === 'user'"
+        [class.ai-message]="msg.sender === 'ai'"
+      >
+
+        <div class="message-header">
+
+          <strong>
+
+            @if (msg.sender === 'user') {
+              You
+            } @else {
+              AI Assistant
+            }
+
+          </strong>
+
+        </div>
+
+        <p>
+          {{ msg.text }}
+        </p>
+
+      </div>
+
+    }
+
+
+    <!-- Loading -->
+    @if (loading()) {
+
+      <div class="message ai-message loading-message">
+
+        <div class="message-header">
+
+          <strong>
+            AI Assistant
+          </strong>
+
+        </div>
+
+        <div class="loading-content">
+
+          <p-progress-spinner
+            strokeWidth="5"
+            [style]="{
+              width: '20px',
+              height: '20px'
+            }">
+          </p-progress-spinner>
+
+          <span>
+            AI is thinking...
+          </span>
+
+        </div>
+
+      </div>
+
+    }
+
+  </div>
+
+
+  <!-- Input -->
+  <div class="chat-input">
+
+    <input
+      pInputText
+      type="text"
+      [(ngModel)]="message"
+      placeholder="Ask about your expenses..."
+      (keyup.enter)="sendMessage()"
+      [disabled]="loading()"
+    />
+
+    <p-button
+      label="Send"
+      icon="pi pi-send"
+      [disabled]="!message.trim() || loading()"
+      (onClick)="sendMessage()">
+    </p-button>
+
+  </div>
+
+</div>

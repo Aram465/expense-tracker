@@ -1,0 +1,54 @@
+{
+  "expenses": [
+    {
+      "id": "Cpx_14UTgaI",
+      "amount": 100,
+      "category": "Food",
+      "date": "2026-09-08",
+      "note": "humburger and soda"
+    },
+    {
+      "id": "mWYxyCr7YSQ",
+      "amount": 150,
+      "category": "Transport",
+      "date": "2026-09-09",
+      "note": "big car"
+    },
+    {
+      "id": "ENbez8wjSx4",
+      "amount": 200,
+      "category": "Shopping",
+      "date": "2026-09-08T23:00:00.000Z",
+      "note": "shirt"
+    },
+    {
+      "id": "gM3laS9FWEU",
+      "amount": 200,
+      "category": "Food",
+      "date": "2026-09-08T23:00:00.000Z",
+      "note": "chips and chicken"
+    },
+    {
+      "id": "l6wsImwU6Ls",
+      "amount": 300,
+      "category": "Shopping",
+      "date": "2026-07-31T23:00:00.000Z",
+      "note": "shirt + skirt"
+    },
+    {
+      "id": "ZlerqJgD1tU",
+      "amount": 300,
+      "category": "Shopping",
+      "date": "2026-08-31T23:00:00.000Z",
+      "note": "blouse"
+    },
+    {
+      "id": "2gRas6bEwSk",
+      "amount": 500,
+      "category": "Entertainment",
+      "date": "2026-09-08T23:00:00.000Z",
+      "note": "parks"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
